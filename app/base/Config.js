@@ -6,7 +6,6 @@ const Config = {
     // requestUrl:'http://172.16.10.223:8007',//测试环境 ----谭少军
     requestUrl:'http://172.16.10.15:9098',//测试环境 ----李康
     // websocket:'ws://172.16.10.223:2020/webSocket', //测试环境websocket
-
     // requestUrl:'http://13.231.116.216:80',//正式环境
     websocket:'ws://39.97.119.6:2020/webSocket',  //正式环境websocket
     registerPage:{
