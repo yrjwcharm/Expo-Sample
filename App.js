@@ -1,19 +1,41 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React,{Component} from 'react';
+import {Alert,StyleSheet,Platform, Text, View, YellowBox, StatusBar} from 'react-native';
+import {SplashScreen} from 'expo'
+import {MaterialCommunityIcons} from '@expo/vector-icons'
+import Constants from 'expo-constants'
+import AppContainer from './app/RouterConfig';
+import './app/base/Global';
+import StatusBarUtil from "./app/utils/StatusBarUtil";
+console.disableYellowBox = true;
+if (!__DEV__) {
+    global.console = {
+        info: () => {
+        },
+        log: () => {
+        },
+        warn: () => {
+        },
+        debug: () => {
+        },
+        error: () => {
+        },
+        assert: () => {
+        }
+    };
+}
+export default  function  App() {
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+        return(
+            <View style={styles.container}>
+                {Platform.OS === "ios" && <StatusBar barStyle="dark-content" />}
+                <AppContainer/>
+            </View>
+        )
+
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+    },
 });
